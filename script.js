@@ -15,12 +15,12 @@ async function loadNASAImage() {
 
     if (data.media_type === "video") {
       image.style.display = "none";
-      const video = document.createElement("iframe");
-      video.src = data.url;
-      video.width = "100%";
-      video.height = "500px";
-      video.style.borderRadius = "10px";
-      image.parentNode.insertBefore(video, image);
+      const link = document.createElement("a");
+      link.href = data.url;
+      link.target = "_blank";
+      link.textContent = "▶ Click to watch today's NASA video";
+      link.style.cssText = "display:block;color:#60a5fa;font-size:18px;margin:20px 0;";
+      image.parentNode.insertBefore(link, image);
     } else {
       image.src = data.url;
       image.style.display = "block";
