@@ -6,8 +6,9 @@ let saved = false;
 
 async function loadNASAImage() {
   try {
-    const res = await fetch("https://corsproxy.io/?https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY");
-    const data = await res.json();
+    const res = await fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"));
+    const json = await res.json();
+    const data = JSON.parse(json.contents);
     
     title.textContent = data.title;
     description.textContent = data.explanation;
@@ -43,10 +44,3 @@ button.addEventListener("click", () => {
 });
 
 loadNASAImage();
-```
-
----
-
-### Commit message:
-```
-Fix CORS issue using corsproxy
