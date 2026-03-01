@@ -6,7 +6,7 @@ let saved = false;
 
 async function loadNASAImage() {
   try {
-    const res = await fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY");
+    const res = await fetch("https://corsproxy.io/?https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY");
     const data = await res.json();
     
     title.textContent = data.title;
@@ -27,18 +27,26 @@ async function loadNASAImage() {
 
   } catch (error) {
     title.textContent = "Failed to load NASA image.";
+    console.error(error);
   }
 }
 
 button.addEventListener("click", () => {
   saved = !saved;
   if (saved) {
-    button.textContent = "Saved ";
+    button.textContent = "Saved ⭐";
     button.style.backgroundColor = "#16a34a";
   } else {
-    button.textContent = "Add to Favorites ";
+    button.textContent = "Add to Favorites ⭐";
     button.style.backgroundColor = "#2563eb";
   }
 });
 
 loadNASAImage();
+```
+
+---
+
+### Commit message:
+```
+Fix CORS issue using corsproxy
