@@ -12,7 +12,6 @@ async function loadNASAImage() {
     title.textContent = data.title;
     description.textContent = data.explanation;
 
-    // ← NOUVEAU: vérifie si c'est une image ou une vidéo
     if (data.media_type === "video") {
       image.style.display = "none";
       const video = document.createElement("iframe");
@@ -34,10 +33,10 @@ async function loadNASAImage() {
 button.addEventListener("click", () => {
   saved = !saved;
   if (saved) {
-    button.textContent = "Saved ⭐";
+    button.textContent = "Saved ";
     button.style.backgroundColor = "#16a34a";
   } else {
-    button.textContent = "Add to Favorites ⭐";
+    button.textContent = "Add to Favorites ";
     button.style.backgroundColor = "#2563eb";
   }
 });
