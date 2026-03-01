@@ -6,9 +6,8 @@ let saved = false;
 
 async function loadNASAImage() {
   try {
-    const res = await fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2026-02-28"));
-    const json = await res.json();
-    const data = JSON.parse(json.contents);
+    const res = await fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2026-02-28");
+    const data = await res.json();
     
     title.textContent = data.title;
     description.textContent = data.explanation;
