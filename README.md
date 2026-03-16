@@ -1,4 +1,4 @@
-Assignment 3 — Prototype Report
+Assignment 3  Prototype Report
 
 What I Did
 For this assignment, I built a prototype of a website that shows the NASA Picture of the Day. I created the page using HTML, styled it with CSS, and added JavaScript to load real data from the NASA API. The site shows a real space image, its title, description, and includes a button interaction.
@@ -23,7 +23,7 @@ Overall, the prototype works well and shows how the final project could look. It
 
 
 
-Capstone Project — Part 4 Report
+Capstone Project  Part 4 Report
 
 What I Did?
 I built a web app that lets users search NASA's Astronomy Picture of the Day by date and save favorites. The app shows the image, title, date, and description. Users can click the image for HD version, save favorites, and delete them. Everything is saved in the browser so it remembers your favorites.
